@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    {{ title }}
+    <button *ngIf="active"  (click)="toggleActive()" class="btn btn-danger float-right">X</button>
+    <button *ngIf="!active" (click)="toggleActive()" class="btn btn-primary float-right">V</button>
+  </div >
+  <div *ngIf="active" class="content card">
+    <div class="card-body">
+      <!-- <ng-content></ng-content> -->
+      <ng-container *ngTemplateOutlet="dialogBody"></ng-container>
+    </div>
+  </div>
+</div>
